@@ -1,0 +1,13 @@
+
+Compare the last lines in two text files. Exit with success if the last lines match and failure if they don't.
+
+------
+if [[ $(tail -1 file1) = $(tail -1 file2) ]]; then
+     echo "Same last lines"
+     exit 0
+else
+     echo "Last lines differ"
+     exit 1
+fi
+----------
+
