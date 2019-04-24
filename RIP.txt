@@ -1,0 +1,7 @@
+Print the 7th line in a text file, or nothing if the file has fewer than 7 lines.
+[root@linux ~]# sed '7!d' filename
+
+#!/bin/bash
+read -p "Type th file name:  " file
+sed -n '7p' $file
+
