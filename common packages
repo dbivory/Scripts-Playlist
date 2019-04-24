@@ -1,0 +1,61 @@
+
+Executing A Playbook
+
+ansible-playbook playbook.yml
+
+cd /ansible playbooks
+
+vi playbookname.yaml      
+
+---
+
+- host: all
+ 
+remote_user: ansible
+ 
+become: yes
+
+task:
+ 
+- name: install common packages
+   
+  yum:
+     
+   pkg:
+       
+    - ftp
+       
+    - ntp
+       
+    - mlocate
+       
+    - vim
+       
+    - bind-utils
+       
+    - man
+       
+    - man-pages
+       
+    - sysstat
+       
+    - mailx
+    
+  state: latest
+    
+  update_cache: yes
+
+ 
+
+- name: write resolve config file
+   
+  template:
+     
+    src: /ansible/templetes/resolv.conf.j2
+     
+    dest: /etc/resolv.conf
+
+
+
+
+
