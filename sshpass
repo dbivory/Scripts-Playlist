@@ -1,0 +1,6 @@
+yum install sshpass -y
+
+for p in $(cat /tmp/hosts); 
+do sshpass -p 'YourPassword' ssh -o StrictHostKeyChecking=no -l UserName ${p}  CommandToRun; 
+done
+
